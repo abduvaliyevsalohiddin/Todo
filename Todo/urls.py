@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('hamma_studentlar/', hamma_studentlar),
+    path('hamma_rejalar/', hamma_rejalar),
 ]
