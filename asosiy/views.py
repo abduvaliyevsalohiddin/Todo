@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 
 
 # Create your views here.
@@ -15,8 +16,14 @@ def hamma_studentlar(request):
 
 
 def hamma_rejalar(request):
+    if request.method == 'POST':
+        forma = RejaForm(request.POST)
+        if forma.is_valid():
+            forma.save()
+
     content = {
-        "rejalar": Malumot.objects.all()
+        "rejalar": Malumot.objects.all(),
+        "forma": RejaForm()
     }
     return render(request, "hamma_rejalar.html", content)
 
@@ -33,6 +40,7 @@ def student_kurs(request):
         "studentlar": Student.objects.filter(kurs__gte=3)
     }
     return render(request, "student_kurs.html", content)
+
 
 def reja_ochir(request, son):
     Malumot.objects.get(id=son).delete()

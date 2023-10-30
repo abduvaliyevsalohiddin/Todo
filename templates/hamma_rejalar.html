@@ -16,5 +16,17 @@
     </a>
     {% endfor %}
 
+    <br>
+    <hr>
+    <br>
+
+    <form method="post">{% csrf_token %}
+        <h1>Yangi reja qo'shish</h1>
+        {{ forma.as_p }}
+
+        <label>Qo'shish : </label>
+        <button>Qo'shish</button>
+    </form>
+
 </body>
 </html>
