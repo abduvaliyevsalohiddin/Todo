@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 
 
@@ -33,3 +33,7 @@ def student_kurs(request):
         "studentlar": Student.objects.filter(kurs__gte=3)
     }
     return render(request, "student_kurs.html", content)
+
+def reja_ochir(request, son):
+    Malumot.objects.get(id=son).delete()
+    return redirect("/hamma_rejalar/")
