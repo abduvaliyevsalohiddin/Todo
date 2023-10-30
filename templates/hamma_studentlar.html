@@ -12,6 +12,9 @@
     {% for student in studentlar %}
     <br>
     <h1>{{student}}</h1>
+    <a href="/tanlangan_student/{{student.id}}/">
+        <button>Kirish</button>
+    </a>
     {% endfor %}
 
 

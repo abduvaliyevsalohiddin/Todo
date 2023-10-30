@@ -59,3 +59,11 @@ def bitiruvchi_student_reja(request):
         "rejalar": Malumot.objects.filter(student__kurs=4)
     }
     return render(request, "bitiruvchi_student_reja.html", content)
+
+def tanlangan_student(request, son):
+    content = {
+        "rejalar": Malumot.objects.filter(student__id=son)
+    }
+    return render(request, "tanlangan_student.html", content)
+
+
