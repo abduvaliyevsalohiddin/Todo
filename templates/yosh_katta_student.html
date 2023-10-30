@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tizimdagi hamma 20 yoshdan katta studentlar ro'yhati (20 yosh kirmaydi) </h1>
+    <br>
+    <hr>
+    {% for student in studentlar %}
+    <br>
+    <h1>{{student.ism}} --> {{student.yosh}} yosh</h1>
+    {% endfor %}
+</body>
+</html>

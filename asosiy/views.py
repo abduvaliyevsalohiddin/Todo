@@ -45,3 +45,11 @@ def student_kurs(request):
 def reja_ochir(request, son):
     Malumot.objects.get(id=son).delete()
     return redirect("/hamma_rejalar/")
+
+
+def yosh_katta_student(request):
+    content = {
+        "studentlar": Student.objects.filter(yosh__gt=20)
+    }
+    return render(request, "yosh_katta_student.html", content)
+

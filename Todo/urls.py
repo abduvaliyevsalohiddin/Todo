@@ -12,5 +12,6 @@ urlpatterns = [
     path('bajarilmagan_reja/', bajarilmagan_reja),
     path('student_kurs/', student_kurs),
     path('reja_ochir/<int:son>/', reja_ochir),
+    path('yosh_katta_student/', yosh_katta_student),
 
 ]
