@@ -19,3 +19,10 @@ def hamma_rejalar(request):
         "rejalar": Malumot.objects.all()
     }
     return render(request, "hamma_rejalar.html", content)
+
+
+def bajarilmagan_reja(request):
+    content = {
+        "rejalar": Malumot.objects.filter(bajatilgan=False)
+    }
+    return render(request, "bajarilmagan_reja.html", content)
