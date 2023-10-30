@@ -26,3 +26,10 @@ def bajarilmagan_reja(request):
         "rejalar": Malumot.objects.filter(bajatilgan=False)
     }
     return render(request, "bajarilmagan_reja.html", content)
+
+
+def student_kurs(request):
+    content = {
+        "studentlar": Student.objects.filter(kurs__gte=3)
+    }
+    return render(request, "student_kurs.html", content)
