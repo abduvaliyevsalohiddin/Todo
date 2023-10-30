@@ -53,3 +53,9 @@ def yosh_katta_student(request):
     }
     return render(request, "yosh_katta_student.html", content)
 
+
+def bitiruvchi_student_reja(request):
+    content = {
+        "rejalar": Malumot.objects.filter(student__kurs=4)
+    }
+    return render(request, "bitiruvchi_student_reja.html", content)
